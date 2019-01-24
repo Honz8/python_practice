@@ -1,5 +1,4 @@
 #tah hráče
-
 def tah_hrace(pole):
     "Vrátí herní pole s daným symbolem umístěným na danou pozici"
     while True:
@@ -13,7 +12,6 @@ def tah_hrace(pole):
         else:
             return (pole[:cislo_policka] + "o" + pole[cislo_policka+1:])
             break
-
 
 #tah počítače
 def tah_pocitace(pole):
@@ -43,7 +41,6 @@ def vyhodnot (pole):
         return("Remíza")
     else:
         return("-")
-
 
 #piskvorky 1D
 def piskvorky_1D():

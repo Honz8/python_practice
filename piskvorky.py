@@ -1,4 +1,5 @@
 #tah hráče
+
 def tah_hrace(pole):
     "Vrátí herní pole s daným symbolem umístěným na danou pozici"
     while True:
@@ -13,11 +14,19 @@ def tah_hrace(pole):
             return (pole[:cislo_policka] + "o" + pole[cislo_policka+1:])
             break
 
+
 #tah počítače
 def tah_pocitace(pole):
     "Vrátí herní pole s daným symbolem umístěným na danou pozici"
     from random import randrange
-    if "x-" in pole:
+    
+    if "-oox" in pole:
+        return pole.replace("-oox","xoox")
+    elif "xoo-" in pole:
+        return pole.replace("xoo-","xoox")
+    elif "o-o" in pole:
+        return pole.replace("o-o","oxo")
+    elif "x-" in pole:
         return pole.replace("x-","xx")
     elif "-x" in pole:
         return pole.replace("-x","xx")
@@ -25,6 +34,7 @@ def tah_pocitace(pole):
         return pole.replace("o-","ox")
     elif "-o" in pole:
         return pole.replace("-o","xo")
+    
     else:
         while True:
             cislo_policka = randrange(0,20)
@@ -41,6 +51,7 @@ def vyhodnot (pole):
         return("Remíza")
     else:
         return("-")
+
 
 #piskvorky 1D
 def piskvorky_1D():
@@ -67,10 +78,3 @@ def piskvorky_1D():
             break
 
 piskvorky_1D()
-
-
-
-
-
-
-
